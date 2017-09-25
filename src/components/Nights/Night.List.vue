@@ -2,6 +2,7 @@
     <table class="table table-hover table-striped table-bordered">
         <thead>
             <tr>
+                
                 <th>Code</th>
                 <th>Name</th>
                 <th>Date</th>
@@ -10,13 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="facture in factures" v-bind:key="facture._id">
-                <td>{{facture.code}}</td>
-                <td>{{facture.name}}</td>
-                <td>{{facture.date | formatDate}}</td>
-                <td>{{facture.status}}</td>
+            <tr v-for="night in nights" v-bind:key="night._id">
+                <td>{{night.code}}</td>
+                <td>{{night.name}}</td>
+                <td>{{night.date | formatDate}}</td>
+                <td>{{night.status}}</td>
                 <td>
-                    <router-link :to="{ path:facture._id+ '/edit'}" append>
+                    <router-link :to="{ path:night._id+ '/edit'}" append>
                         <button class="btn btn-info">Modifier</button>
                     </router-link>
                 </td>
@@ -27,8 +28,7 @@
 
 <script>
 export default {
-    props: ['factures']
-
+    props: ['nights']
 }
 </script>
 

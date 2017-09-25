@@ -1,27 +1,27 @@
 <template>
   <div class="col-12">
     <router-link :to="{path:'new'}" append>
-      <button class="btn btn-success float-right but">Nouvelle Factures</button>
+      <button class="btn btn-success float-right but">Nouvelle Nights</button>
     </router-link>
-    <FactureList :factures="factures"></FactureList>
+    <NightList :nights="nights"></NightList>
   </div>
 </template>
 
 <script>
-const FactureList = () => import('./Facture.List.vue');
+const NightList = () => import('./Night.List.vue');
 export default {
   computed: {
-    factures() {
-      return this.$store.getters.getAllFactures;
+    nights() {
+      return this.$store.getters.getAllNights;
     }
   },
   created() {
-    this.$store.dispatch("getAllFactures").catch(err=>{
+    this.$store.dispatch("getAllNights").catch(err=>{
       this.$router.push({name:"login"});
     });
   },
   components: {
-    FactureList
+    NightList
   }
 
 }

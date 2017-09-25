@@ -1,24 +1,24 @@
 <template>
     <div>
-        <FactureForm :facture="facture" @submit="add" @back="back">
-        </FactureForm>
+        <DrinkForm :drink="drink" @submit="add" @back="back">
+        </DrinkForm>
     </div>
 </template>
 
 <script>
 
-const FactureForm = () => import('./Facture.Form.vue');
+const DrinkForm = () => import('./Drink.Form.vue');
 export default {
     data() {
         return {
-            facture: {
+            drink: {
 
             }
         }
     },
     methods: {
         add: function() {
-            this.$store.dispatch("insertFacture", this.facture).then((response) => {
+            this.$store.dispatch("insertDrink", this.drink).then((response) => {
                 this.$router.go(-1);
             }).catch((error) => {
                 console.log(error);
@@ -28,7 +28,7 @@ export default {
             this.$router.go(-1);
         }
     }, components: {
-        FactureForm
+        DrinkForm
     }
 }
 </script>

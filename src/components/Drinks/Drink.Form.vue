@@ -7,7 +7,7 @@
                         <label>Code
                             <span>*</span>
                         </label>
-                        <input class="form-control" type="text" name="code" v-model="facture.code" required>
+                        <input class="form-control" type="text" name="code" v-model="drink.code" required>
                     </div>
                 </div>
 
@@ -16,7 +16,7 @@
                         <label>Name
                             <span>*</span>
                         </label>
-                        <input class="form-control" type="text" name="name" v-model="facture.name" required>
+                        <input class="form-control" type="text" name="name" v-model="drink.name" required>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                         <label>Date
                             <span>*</span>
                         </label>
-                        <Datepicker input-class="form-control" name="date" v-model="facture.date" :required="true">
+                        <Datepicker input-class="form-control" name="date" v-model="drink.date" :required="true">
                         </Datepicker>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <label>Status
                             <span>*</span>
                         </label>
-                        <input class="form-control" type="text" name="status" v-model="facture.status" required>
+                        <input class="form-control" type="text" name="status" v-model="drink.status" required>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
 const Datepicker = () => import('vuejs-datepicker');
 export default {
     props: [
-        "facture"
+        "drink"
     ],
     methods: {
         submit: function() {

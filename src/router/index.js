@@ -3,12 +3,14 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 // Routers
-import FacturesRouter from './factures.js';
+import DrinksRouter from './drinks.js';
+import NightsRouter from './nights.js';
 
 
 // Root Components
 const Index = () => import('@/components/Login.vue');
-const Factures = () => import('@/components/Factures/Facture.Root.vue');
+const Drinks = () => import('@/components/Drinks/Drink.Root.vue');
+const Nights = () => import('@/components/Nights/Night.Root.vue');
 
 
 
@@ -21,9 +23,14 @@ export default new Router({
       component: Index
     },
     {
-      path: '/factures',
-      component: Factures,
-      children: FacturesRouter
+      path: '/drinks',
+      component: Drinks,
+      children: DrinksRouter
+    },
+    {
+      path: '/nights',
+      component: Nights,
+      children: NightsRouter
     }
   ]
 })
