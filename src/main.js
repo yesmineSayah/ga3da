@@ -12,6 +12,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue);
 
+// Font Awesome
+import 'font-awesome/css/font-awesome.min.css'
+
+
 // Filters
 import moment from 'moment';
 Vue.filter('formatDate', function (x) {

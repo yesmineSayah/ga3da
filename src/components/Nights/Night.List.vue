@@ -11,13 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="night in nights" v-bind:key="night._id">
+            <tr v-for="night in nights" v-bind:key="night.id">
                 <td>{{night.code}}</td>
                 <td>{{night.name}}</td>
                 <td>{{night.date | formatDate}}</td>
                 <td>{{night.status}}</td>
                 <td>
-                    <router-link :to="{ path:night._id+ '/edit'}" append>
+                    <router-link :to="{ path:night.id+ '/edit'}" append>
                         <button class="btn btn-info">Modifier</button>
                     </router-link>
                 </td>

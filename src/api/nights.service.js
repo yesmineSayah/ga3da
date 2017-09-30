@@ -58,8 +58,9 @@ export function insertNight(night) {
 
 export function editNight(night) {
     return new Promise((resolve, reject) => {
-        let id = night._id;
-        axios.put(url + "/" + id, night).then(response => {
+        let id = night.id;
+        night._method = 'PUT';
+        axios.post(url + "/" + id, night).then(response => {
             let night = response.data.data;
             resolve(night);
         }).catch(err => {

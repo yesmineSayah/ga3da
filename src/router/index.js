@@ -8,7 +8,7 @@ import NightsRouter from './nights.js';
 
 
 // Root Components
-const Index = () => import('@/components/Login.vue');
+const Index = () => import('@/components/Index.vue');
 const Drinks = () => import('@/components/Drinks/Drink.Root.vue');
 const Nights = () => import('@/components/Nights/Night.Root.vue');
 
@@ -18,8 +18,8 @@ const Nights = () => import('@/components/Nights/Night.Root.vue');
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'login',
+      path: "/",
+      name: "index",
       component: Index
     },
     {

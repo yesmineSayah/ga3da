@@ -19,7 +19,7 @@ export default {
         },
         getNightById(state, night) {
             for (let i = 0; i < state.nights.length; i++) {
-                if (state.nights._id === night._id) {
+                if (state.nights.id === night.id) {
                     state.nights.splice(i, 1);
                     break;
                 }
@@ -31,7 +31,7 @@ export default {
         },
         deleteNight(state, id) {
             for (let i = 0; i < state.nights.length; i++) {
-                if (state.nights._id === id) {
+                if (state.nights.id === id) {
                     state.nights.splice(i, 1);
                     break;
                 }

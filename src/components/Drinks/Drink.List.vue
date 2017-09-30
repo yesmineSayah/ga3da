@@ -10,13 +10,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="drink in drinks" v-bind:key="drink._id">
+            <tr v-for="drink in drinks" v-bind:key="drink.id">
                 <td>{{drink.code}}</td>
                 <td>{{drink.name}}</td>
                 <td>{{drink.date | formatDate}}</td>
                 <td>{{drink.status}}</td>
                 <td>
-                    <router-link :to="{ path:drink._id+ '/edit'}" append>
+                    <router-link :to="{ path:drink.id+ '/edit'}" append>
                         <button class="btn btn-info">Modifier</button>
                     </router-link>
                 </td>

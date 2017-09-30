@@ -33,7 +33,7 @@ export default {
             this.$router.go(-1);
         },
         remove() {
-            this.$store.dispatch('deleteNight', this.night._id).then(f => {
+            this.$store.dispatch('deleteNight', this.night.id).then(f => {
                 this.$router.go(-1);
             });
         }

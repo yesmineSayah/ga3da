@@ -19,7 +19,7 @@ export default {
         },
         getDrinkById(state, drink) {
             for (let i = 0; i < state.drinks.length; i++) {
-                if (state.drinks._id === drink._id) {
+                if (state.drinks.id === drink.id) {
                     state.drinks.splice(i, 1);
                     break;
                 }
@@ -31,7 +31,7 @@ export default {
         },
         deleteDrink(state, id) {
             for (let i = 0; i < state.drinks.length; i++) {
-                if (state.drinks._id === id) {
+                if (state.drinks.id === id) {
                     state.drinks.splice(i, 1);
                     break;
                 }

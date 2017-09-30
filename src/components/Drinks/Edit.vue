@@ -33,7 +33,7 @@ export default {
             this.$router.go(-1);
         },
         remove() {
-            this.$store.dispatch('deleteDrink', this.drink._id).then(f => {
+            this.$store.dispatch('deleteDrink', this.drink.id).then(f => {
                 this.$router.go(-1);
             });
         }

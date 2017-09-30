@@ -58,7 +58,8 @@ export function insertDrink(drink) {
 
 export function editDrink(drink) {
     return new Promise((resolve, reject) => {
-        let id = drink._id;
+        let id = drink.id;
+        drink._method = 'PUT';
         axios.put(url + "/" + id, drink).then(response => {
             let drink = response.data.data;
             resolve(drink);
