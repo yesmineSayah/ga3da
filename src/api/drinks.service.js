@@ -6,7 +6,7 @@ let url = config.host + "/api/drinks";
 export function getAllDrinks() {
     return new Promise((resolve, reject) => {
         axios.get(url).then(response => {
-            let drinks = response.data.data;
+            let drinks = response.data;
             resolve(drinks);
         }).catch((err) => {
             if (err.response.status === 401) {
@@ -23,7 +23,7 @@ export function getAllDrinks() {
 export function getDrinkById(id) {
     return new Promise((resolve, reject) => {
         axios.get(url + "/" + id).then(response => {
-            let drink = response.data.data;
+            let drink = response.data;
             resolve(drink);
         }).catch(err => {
             if (err.response.status === 401) {
@@ -41,7 +41,7 @@ export function getDrinkById(id) {
 export function insertDrink(drink) {
     return new Promise((resolve, reject) => {
         axios.post(url, drink).then(response => {
-            let drink = response.data.data;
+            let drink = response.data;
             resolve(drink);
         }).catch(err => {
             if (err.response.status === 401) {
@@ -61,7 +61,7 @@ export function editDrink(drink) {
         let id = drink.id;
         drink._method = 'PUT';
         axios.put(url + "/" + id, drink).then(response => {
-            let drink = response.data.data;
+            let drink = response.data;
             resolve(drink);
         }).catch(err => {
             if (err.response.status === 401) {

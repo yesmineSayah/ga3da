@@ -1,34 +1,29 @@
 <template>
-    <table class="table table-hover table-striped table-bordered">
-        <thead>
-            <tr>
-                
-                <th>Code</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="night in nights" v-bind:key="night.id">
-                <td>{{night.code}}</td>
-                <td>{{night.name}}</td>
-                <td>{{night.date | formatDate}}</td>
-                <td>{{night.status}}</td>
-                <td>
-                    <router-link :to="{ path:night.id+ '/edit'}" append>
-                        <button class="btn btn-info">Modifier</button>
-                    </router-link>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <Card v-for="night in nights" v-bind:key="night.id" :night="night" @click="click" @profile="profile"></Card>
+        </div>
+    </div>
 </template>
 
 <script>
+const Card = () => import('./Night.Card.Component.vue');
 export default {
-    props: ['nights']
+    props: ['nights'],
+    components: {
+        Card
+    },
+    methods: {
+        click(night) {
+            this.$router.push({
+                path: "" + night.id,
+                append: true
+            });
+        },
+        profile(owner) {
+            alert("hi i'm " + owner.first_name + " " + owner.last_name)
+        }
+    }
 }
 </script>
 

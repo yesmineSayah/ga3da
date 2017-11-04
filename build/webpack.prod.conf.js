@@ -98,11 +98,15 @@ var webpackConfig = merge(baseWebpackConfig, {
     ]),
     // service worker caching
     new SWPrecacheWebpackPlugin({
-      cacheId: 'my-vue-app',
+      cacheId: 'ka3det',
       filename: 'service-worker.js',
       staticFileGlobs: ['dist/**/*.{js,html,css}'],
       minify: true,
-      stripPrefix: 'dist/'
+      stripPrefix: 'dist/',
+      runtimeCaching:[{
+        urlPattern: new RegExp('^https://glacial-sea-87801.herokuapp.com'),
+        handler:'networkFirst'
+      }]
     })
   ]
 })

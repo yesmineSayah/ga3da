@@ -1,0 +1,36 @@
+@import './main.scss';
+$fontFamily:Anton;
+h1 {
+    font-size: 72px;
+    font-family: $fontFamily;
+    font-weight: 400;
+    @media screen and (max-width: 579px) {
+        font-size: 48px;
+    }
+}
+
+h3 {
+    font-size: 24px;
+    font-family: $fontFamily;
+    font-weight: 400;
+    margin-top: 4px;
+    @media screen and (max-width: 579px) {
+        font-size: 20px;
+    }
+}
+
+strong {
+    font-weight: 600;
+}
+
+p {
+    font-size: 16px;
+    font-family: $fontFamily;
+    text-align: left;
+    color: $text;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}

@@ -29,7 +29,9 @@ export default {
 
 <style lang="scss">
 @import './main.scss';
-body {
+#app {
   background-color: $webBack;
+  background: $webBack url('./assets/back.png') repeat center center scroll;
+  overflow-x:hidden;
 }
 </style>

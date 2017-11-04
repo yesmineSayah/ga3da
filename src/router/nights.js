@@ -1,6 +1,5 @@
 const Index = () => import('@/components/Nights/Index.vue');
-const New = () => import('@/components/Nights/New.vue');
-const Edit = () => import('@/components/Nights/Edit.vue');
+const Details = () => import('@/components/Nights/Details.vue');
 
 export default [
     {
@@ -9,11 +8,8 @@ export default [
         component: Index
     },
     {
-        path: 'new',
-        component: New
-    },
-    {
-        path: ':idNight/edit',
-        component: Edit
+        path: ':id',
+        name: "nightsDetails",
+        component: Details
     }
 ]

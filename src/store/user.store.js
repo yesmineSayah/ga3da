@@ -5,7 +5,7 @@ export default {
         user: {}
     },
     getters: {
-        getCurrentUser() {
+        getCurrentUser(state) {
             return state.user;
         }
     },

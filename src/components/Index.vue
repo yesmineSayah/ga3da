@@ -9,10 +9,12 @@
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="div div1">
-                    <img class="img-fluid fixedHeight" src="../assets/9a3dettes-logo-web-crop-u352.png">
-                    <img class="img-fluid fixedPosition" src="../assets/u372-4.png">
-                </div>
+                <router-link :to="{name:'nights'}">
+                    <div class="div div1">
+                        <img class="img-fluid fixedHeight" src="../assets/9a3dettes-logo-web-crop-u352.png">
+                        <img class="img-fluid fixedPosition" src="../assets/u372-4.png">
+                    </div>
+                </router-link>
             </div>
             <div class="col-12 col-md-4">
                 <div class="div div2">

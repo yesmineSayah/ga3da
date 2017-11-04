@@ -6,7 +6,7 @@ let url = config.host + "/api/nights";
 export function getAllNights() {
     return new Promise((resolve, reject) => {
         axios.get(url).then(response => {
-            let nights = response.data.data;
+            let nights = response.data;
             resolve(nights);
         }).catch((err) => {
             if (err.response.status === 401) {
@@ -23,7 +23,7 @@ export function getAllNights() {
 export function getNightById(id) {
     return new Promise((resolve, reject) => {
         axios.get(url + "/" + id).then(response => {
-            let night = response.data.data;
+            let night = response.data;
             resolve(night);
         }).catch(err => {
             if (err.response.status === 401) {
@@ -41,7 +41,7 @@ export function getNightById(id) {
 export function insertNight(night) {
     return new Promise((resolve, reject) => {
         axios.post(url, night).then(response => {
-            let night = response.data.data;
+            let night = response.data;
             resolve(night);
         }).catch(err => {
             if (err.response.status === 401) {
@@ -61,7 +61,7 @@ export function editNight(night) {
         let id = night.id;
         night._method = 'PUT';
         axios.post(url + "/" + id, night).then(response => {
-            let night = response.data.data;
+            let night = response.data;
             resolve(night);
         }).catch(err => {
             if (err.response.status === 401) {
